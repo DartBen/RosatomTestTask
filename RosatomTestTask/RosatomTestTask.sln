@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosatomTestTask.Client", "RosatomTestTask.Client\RosatomTestTask.Client.csproj", "{900383A0-2057-471D-8F20-97978E2C5524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosatomTestTask.Server", "RosatomTestTask.Server\RosatomTestTask.Server.csproj", "{ECE5360A-8D9D-4E0A-91F3-7CF46D92B926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{900383A0-2057-471D-8F20-97978E2C5524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900383A0-2057-471D-8F20-97978E2C5524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900383A0-2057-471D-8F20-97978E2C5524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900383A0-2057-471D-8F20-97978E2C5524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE5360A-8D9D-4E0A-91F3-7CF46D92B926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE5360A-8D9D-4E0A-91F3-7CF46D92B926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE5360A-8D9D-4E0A-91F3-7CF46D92B926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE5360A-8D9D-4E0A-91F3-7CF46D92B926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7775F62D-2EAD-4935-A83E-D3B848C5CD2D}
+	EndGlobalSection
+EndGlobal
