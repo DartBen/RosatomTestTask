@@ -18,7 +18,7 @@ namespace RosatomTestTask.Server
             var app = builder.Build();
 
             // миграция для создания БД
-            app.MigrateAppDb();
+            app.MigrateAppDb().GetAwaiter().GetResult();
 
             // для опенапи
             app.MapOpenApi();

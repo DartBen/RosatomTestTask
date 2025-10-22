@@ -4,12 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosatomTestTask.Client", "RosatomTestTask.Client\RosatomTestTask.Client.csproj", "{900383A0-2057-471D-8F20-97978E2C5524}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5BF8EE4F-7FA2-4B0B-8AB9-DDFB0610C193} = {5BF8EE4F-7FA2-4B0B-8AB9-DDFB0610C193}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosatomTestTask.Server", "RosatomTestTask.Server\RosatomTestTask.Server.csproj", "{ECE5360A-8D9D-4E0A-91F3-7CF46D92B926}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosatomTestTask.Domain", "RosatomTestTask.Domain\RosatomTestTask.Domain.csproj", "{5BF8EE4F-7FA2-4B0B-8AB9-DDFB0610C193}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RosatomTestTask.Infrastructure", "RosatomTestTask.Infrastructure\RosatomTestTask.Infrastructure.csproj", "{040DAB63-2DC2-4046-A692-6F62D56AE4C0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{040DAB63-2DC2-4046-A692-6F62D56AE4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{040DAB63-2DC2-4046-A692-6F62D56AE4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{040DAB63-2DC2-4046-A692-6F62D56AE4C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
