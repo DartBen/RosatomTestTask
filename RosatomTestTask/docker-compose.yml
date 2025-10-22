@@ -1,0 +1,37 @@
+services:
+
+    db:
+        image: postgres:16
+        container_name: rosatom_postgres
+        restart: always
+        environment:
+            POSTGRES_DB: RosatomTestTaskDb
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: password
+        ports:
+            - "5432:5432"
+        volumes:
+            - pgdata:/var/lib/postgresql/data 
+        networks:
+            - rosatom-network
+
+    rosatomtesttask.server:
+        image: ${DOCKER_REGISTRY-}rosatomtesttaskserver
+        build:
+            context: .
+            dockerfile: RosatomTestTask.Server/Dockerfile
+        ports:
+            - "8080:8080"
+        environment:
+          - DBConnectionString=Host=db;Database=RosatomTestTaskDb;Username=postgres;Password=password
+        depends_on:
+          - db
+        networks:
+          - rosatom-network
+
+volumes:
+    pgdata:
+
+networks:
+    rosatom-network:
+        driver: bridge
