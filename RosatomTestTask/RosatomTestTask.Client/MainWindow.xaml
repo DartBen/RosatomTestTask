@@ -5,8 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RosatomTestTask.Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Документы" Height="600" Width="1000">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <!-- Заголовок -->
+        <TextBlock Text="Список документов" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <!-- Основной контент: мастер-детейл -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Список документов (Master) -->
+            <DataGrid x:Name="MastersGrid"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      SelectionMode="Single"
+                      SelectionUnit="FullRow"
+                      GridLinesVisibility="Horizontal">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер" Binding="{Binding Number}" Width="*"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=d}" Width="100"/>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Amount, StringFormat=N2}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Разделитель -->
+            <GridSplitter Grid.Column="1" Width="10" HorizontalAlignment="Stretch"/>
+
+            <!-- Детали (Detail) -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Поля документа -->
+                <TextBox Grid.Row="0" Text="{Binding SelectedMaster.Number}" Margin="0,0,0,5" Height="24"/>
+                <DatePicker Grid.Row="1" SelectedDate="{Binding SelectedMaster.Date}" Margin="0,0,0,5"/>
+                <TextBox Grid.Row="2" Text="{Binding SelectedMaster.Amount}" Margin="0,0,0,5" Height="24"/>
+                <TextBox Grid.Row="3" Text="{Binding SelectedMaster.Note}" Margin="0,0,0,5" Height="24" AcceptsReturn="True"/>
+
+                <!-- Список спецификаций -->
+                <DataGrid Grid.Row="5"
+                          ItemsSource="{Binding SelectedMaster.Details}"
+                          AutoGenerateColumns="False"
+                          CanUserAddRows="True"
+                          CanUserDeleteRows="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="*"/>
+                        <DataGridTextColumn Header="Сумма" Binding="{Binding Amount}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Добавить" Width="80" Margin="0,0,10,0"/>
+            <Button Content="Сохранить" Width="80" Margin="0,0,10,0"/>
+            <Button Content="Удалить" Width="80"/>
+        </StackPanel>
     </Grid>
 </Window>

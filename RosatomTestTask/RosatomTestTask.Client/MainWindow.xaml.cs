@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using RosatomTestTask.Client.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,7 @@ namespace RosatomTestTask.Client
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }
