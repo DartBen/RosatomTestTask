@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using RosatomTestTask.Infrastructure.Entities;
 
 namespace RosatomTestTask.Infrastructure
